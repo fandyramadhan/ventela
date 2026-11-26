@@ -5642,3 +5642,10 @@ h6,
     font-size: 16px;
   }
 }
+
+/* keep the grid texture undistorted when its box is stretched (mobile) */
+.hero-grid-image,
+.team-grid-image {
+  object-fit: cover;
+  object-position: top center;
+}

@@ -54,7 +54,7 @@ export default function Team() {
                 className="tag-section w-variant-3166fbc8-0483-b967-9edf-440204dfadc7">
                 <div>Collection</div>
               </div>
-              <div className="title-section text-center text-white team">
+              <div role="heading" aria-level={2} className="title-section text-center text-white team">
                 WEAR LOCAL,
                 <span className="text-mint">WALK LOUDER</span>, PAY SMARTER
               </div>

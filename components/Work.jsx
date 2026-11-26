@@ -5,7 +5,7 @@ export default function Work() {
         <div className="section-contain flex-col our-work">
           <div className="section-header align-left our-work">
             <div className="section-text our-work">
-              <div className="title-section">
+              <div role="heading" aria-level={2} className="title-section">
                 SPECIAL
                 <span>COLLABORATION</span>
               </div>

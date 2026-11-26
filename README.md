@@ -15,7 +15,7 @@ This source code is **free**: study it, modify it, and use it as a reference for
 - **Pinned promotion section**: copy rises from below while the background scrubs from white to brand blue.
 - **Smart navbar**: hides on scroll down, reappears on scroll up, with an active-section indicator.
 - Full set of sections: Hero, Category, Promotion, Materials, Collaboration, Collection, FAQ, and Footer with a contact form.
-- **Lighthouse (desktop):** Performance 98 · Accessibility 89 · Best Practices 81 · SEO 100.
+- **Lighthouse (desktop):** Performance 98 · Accessibility 100 · Best Practices 100 · SEO 100. **(mobile):** 96 · 100 · 100 · 100.
 
 ![Lighthouse](socmed/03-lighthouse-performance.png)
 

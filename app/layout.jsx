@@ -72,8 +72,9 @@ const JSON_LD = {
 const FAVICON = "/assets/ventela-assets/favicon";
 
 // End-of-<body> runtime scripts, in the exact order of the source index.html.
-// They are rendered into the initial HTML (not loaded from a useEffect) so they
-// execute during the page load, with DOMContentLoaded/load firing naturally.
+// They are rendered into the initial HTML (not loaded from a useEffect) with
+// `defer`, so they keep their order, don't block first paint, and still run
+// before DOMContentLoaded, so the Webflow/GSAP setup fires as usual.
 // This is required: the template's GSAP/ScrollTrigger/SplitText + Webflow-IX
 // animation setup is gated on those events and only initializes correctly when
 // the runtime runs during load (verified: 69 tweens / 32 ScrollTriggers, no
@@ -102,7 +103,6 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: wf.crypto + "\n" + wf.wmod }}
         />
 
-        <link rel="preconnect" href="https://cdn.prod.website-files.com" />
 
         <link
           rel="stylesheet"
@@ -113,12 +113,7 @@ export default function RootLayout({ children }) {
         {/* Webflow visibility gate: hides animated elements until w-mod-ix3 */}
         <style dangerouslySetInnerHTML={{ __html: wf.gate }} />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-
-        {/* Google fonts loader (Anton + Inter Tight) */}
-        <script src="/assets/webfont.js" />
-        <script dangerouslySetInnerHTML={{ __html: wf.webfontLoad }} />
+        {/* Anton + Inter Tight are self-hosted in /assets/fonts.css (no Google Fonts request). */}
 
         <link rel="icon" href={`${FAVICON}/favicon-32.png`} type="image/png" sizes="32x32" />
         <link rel="icon" href={`${FAVICON}/favicon-48.png`} type="image/png" sizes="48x48" />
@@ -147,7 +142,7 @@ export default function RootLayout({ children }) {
         <PromotionScroll />
 
         {BODY_SCRIPTS.map((src) => (
-          <script key={src} src={src} />
+          <script key={src} src={src} defer />
         ))}
         {/* wf-visibility-failsafe (last inline script in the source body) */}
         <script dangerouslySetInnerHTML={{ __html: wf.failsafe }} />

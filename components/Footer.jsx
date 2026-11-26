@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-top-left">
             <div className="footer-top-left-text">
-              <div className="heading-3 title-footer">LET’S WALK TOGETHER</div>
+              <div role="heading" aria-level={2} className="heading-3 title-footer">LET’S WALK TOGETHER</div>
               <div className="footer-social">
                 <a href="https://instagram.com/ventela.indonesia" target="_blank" className="socmed-text">
                   Instagram

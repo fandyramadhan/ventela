@@ -27,7 +27,7 @@ export default function Faq() {
       <div className="w-layout-blockcontainer container w-container">
         <div className="section-contain align-center">
           <div className="section-header">
-            <div className="title-section text-center max-800">
+            <div role="heading" aria-level={2} className="title-section text-center max-800">
               Frequently Asked Questions
             </div>
           </div>

@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="section-contain-hero">
         <div className="hero-top-content">
           <div className="hero-title-wrap">
-            <div className="title-hero is-desktop top">VENTELA</div>
+            <div role="heading" aria-level={1} className="title-hero is-desktop top">VENTELA</div>
             <div className="w-dyn-list">
               <div role="list" className="w-dyn-items">
                 <div role="listitem" className="w-dyn-item">
@@ -48,7 +48,7 @@ export default function Hero() {
                 </div>
               </div>
             </div>
-            <div className="title-hero is-mobile">VENTELA SHOES</div>
+            <div role="heading" aria-level={1} className="title-hero is-mobile">VENTELA SHOES</div>
           </div>
           <div className="hero-title-wrap">
             <div className="service-hero-list">
@@ -122,7 +122,7 @@ export default function Hero() {
                 </a>
               </div>
             </div>
-            <div className="title-hero is-desktop title-hero-bottom">SHOES</div>
+            <div role="heading" aria-level={1} className="title-hero is-desktop title-hero-bottom">SHOES</div>
           </div>
           <div className="hero-top-sosmed-wrap">
             <div className="paragraph-extra-large">©2026</div>
@@ -192,6 +192,7 @@ export default function Hero() {
                 <button
                   type="button"
                   data-w-bg-video-control="true"
+                  aria-label="Play or pause background video"
                   aria-controls="df63139e-6d47-9380-1c0b-182f217bcf51-video"
                   className="w-backgroundvideo-backgroundvideoplaypausebutton play-pause-button w-background-video--control">
                   <span className="play-state">
@@ -249,6 +250,7 @@ export default function Hero() {
                 <button
                   type="button"
                   data-w-bg-video-control="true"
+                  aria-label="Play or pause background video"
                   aria-controls="39f088d6-485c-8d2d-1613-e8335b9be1fe-video"
                   className="w-backgroundvideo-backgroundvideoplaypausebutton play-pause-button w-background-video--control">
                   <span className="play-state">

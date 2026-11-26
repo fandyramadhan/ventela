@@ -14,13 +14,14 @@ export default function Navbar() {
         <div className="navbar-wrapper">
           <div className="navbar-card">
             <a
-              href=""
+              href="/"
+              aria-label="Ventela home"
               aria-current="page"
               className="brand-logo-wrap w-inline-block w--current">
               <img
                 loading="lazy"
                 src="/assets/ventela-assets/logo-ventela.webp"
-                alt=""
+                alt="Ventela"
                 className="brand-logo"
               />
             </a>

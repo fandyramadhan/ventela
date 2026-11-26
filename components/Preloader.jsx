@@ -4,11 +4,11 @@ export default function Preloader() {
       <div className="wrap-preloader-logo">
         <div className="logo-wrap-hero preloader-logo">
           <div className="text-load-wrap">
-            <div className="text-load">
+            <div role="img" className="text-load">
               VENTELA
               <br />
             </div>
-            <div className="text-desc-load">Premium Vulcanized Shoes</div>
+            <div role="img" className="text-desc-load">Premium Vulcanized Shoes</div>
           </div>
         </div>
       </div>
