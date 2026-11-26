@@ -1,10 +1,10 @@
 # 👟 Ventela — Website Redesign (Free Source Code)
 
-A **website redesign concept for [Ventela](https://ventela.co.id)**, a local vulcanized sneaker brand from Bandung, Indonesia, built as a bold, playful landing page packed with scroll animations.
+A **website redesign concept for [Ventela](https://ventelashoes.com/)**, a local vulcanized sneaker brand from Bandung, Indonesia, built as a bold, playful landing page packed with scroll animations.
 
 This source code is **free**: study it, modify it, and use it as a reference for your own projects. 🎉
 
-> ⚠️ This is a redesign / portfolio concept, **not the official Ventela website**, and it is not affiliated with Ventela. All names, logos, and product photos belong to their respective owners.
+> ⚠️ This is a redesign / portfolio concept, **not the official Ventela website** (the official one is [ventelashoes.com](https://ventelashoes.com/)), and it is not affiliated with Ventela. All names, logos, and product photos belong to their respective owners.
 
 ![Preview](socmed/02-brand-guideline.png)
 
