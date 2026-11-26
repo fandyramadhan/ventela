@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next
+/out
+next-env.d.ts
+*.tsbuildinfo
+
+# generator cache (gen-static.mjs bundle)
+/.gen
+
+# env / secrets
+.env
+.env*.local
+
+# logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# local AI-tool settings
+/.claude
+/.qodo
