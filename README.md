@@ -1,96 +1,96 @@
 # 👟 Ventela — Website Redesign (Free Source Code)
 
-Konsep **redesign website [Ventela](https://ventela.co.id)**, brand sepatu vulcanized lokal asal Bandung, dibuat sebagai landing page yang bold, playful, dan penuh animasi scroll.
+A **website redesign concept for [Ventela](https://ventela.co.id)**, a local vulcanized sneaker brand from Bandung, Indonesia, built as a bold, playful landing page packed with scroll animations.
 
-Source code ini **gratis** — boleh dipelajari, dimodifikasi, dan dipakai sebagai referensi untuk project kamu sendiri. 🎉
+This source code is **free**: study it, modify it, and use it as a reference for your own projects. 🎉
 
-> ⚠️ Ini adalah project redesign / konsep portofolio, **bukan website resmi Ventela** dan tidak berafiliasi dengan Ventela. Nama, logo, dan foto produk adalah milik pemiliknya masing-masing.
+> ⚠️ This is a redesign / portfolio concept, **not the official Ventela website**, and it is not affiliated with Ventela. All names, logos, and product photos belong to their respective owners.
 
 ![Preview](socmed/02-brand-guideline.png)
 
-## ✨ Fitur
+## ✨ Features
 
-- **Hero intro animation** — judul di-split per karakter (SplitText) + kartu dekoratif yang muncul bertahap.
-- **Smooth scroll** dengan Lenis, tersinkron ke GSAP ScrollTrigger.
-- **Pinned promotion section** — teks naik dari bawah sambil background berubah putih → biru brand (scrub).
-- **Smart navbar** — sembunyi saat scroll ke bawah, muncul saat scroll ke atas, plus indikator section aktif.
-- Section lengkap: Hero, Category, Promotion, Materials, Collaboration, Collection, FAQ, Footer + form kontak.
+- **Hero intro animation**: the title is split per character (SplitText), and decorative cards reveal one by one.
+- **Smooth scrolling** with Lenis, synced to GSAP ScrollTrigger.
+- **Pinned promotion section**: copy rises from below while the background scrubs from white to brand blue.
+- **Smart navbar**: hides on scroll down, reappears on scroll up, with an active-section indicator.
+- Full set of sections: Hero, Category, Promotion, Materials, Collaboration, Collection, FAQ, and Footer with a contact form.
 - **Lighthouse (desktop):** Performance 98 · Accessibility 89 · Best Practices 81 · SEO 100.
 
 ![Lighthouse](socmed/03-lighthouse-performance.png)
 
 ## 🛠️ Tech Stack
 
-| Tech | Kegunaan |
+| Tech | Purpose |
 | --- | --- |
 | **Next.js 14** (App Router) | Framework & static generation |
-| **React 18** | Komponen section (`components/*.jsx`) |
-| **GSAP 3 + ScrollTrigger + SplitText** | Animasi scroll & teks |
+| **React 18** | Section components (`components/*.jsx`) |
+| **GSAP 3 + ScrollTrigger + SplitText** | Scroll & text animations |
 | **Lenis** | Smooth scrolling |
-| **esbuild** | Render komponen ke HTML statis (`gen-static.mjs`) |
-| **Webflow CSS & IX runtime** | Basis layout & interaksi dari template asli |
-| **Futura PT · Inter Tight** | Font heading & body |
+| **esbuild** | Renders components to static HTML (`gen-static.mjs`) |
+| **Webflow CSS & IX runtime** | Layout and interaction base from the original template |
+| **Futura PT · Inter Tight** | Heading & body fonts |
 
-## 🚀 Cara Menjalankan
+## 🚀 Getting Started
 
-Butuh **Node.js 18+**.
+Requires **Node.js 18+**.
 
 ```bash
-# 1. clone repo
+# 1. clone the repo
 git clone https://github.com/fandyramadhan/ventela.git
 cd ventela
 
 # 2. install dependencies
 npm install
 
-# 3. jalankan mode development → http://localhost:3000
+# 3. start the dev server → http://localhost:3000
 npm run dev
 
-# 4. build & jalankan versi production
+# 4. build & run the production version
 npm run build
 npm run start
 ```
 
-`npm run dev` otomatis menjalankan generator (`gen-static.mjs --watch`) sehingga perubahan di `components/*.jsx` langsung terlihat.
+`npm run dev` also runs the generator in watch mode (`gen-static.mjs --watch`), so edits to `components/*.jsx` show up immediately.
 
-## 📁 Struktur Folder
+## 📁 Project Structure
 
 ```
 app/
-  layout.jsx           <head>, font, script runtime GSAP/Webflow
-  page.jsx             menyuntikkan HTML hasil render komponen
-  _content.js          AUTO-GENERATED (jangan diedit manual)
-  SmoothScroll.jsx     instance Lenis (window.lenis)
-  SmartNavbar.jsx      hide/show navbar + indikator section aktif
-  PromotionScroll.jsx  animasi pinned section #promotion
+  layout.jsx           <head>, fonts, GSAP/Webflow runtime scripts
+  page.jsx             injects the HTML rendered from the components
+  _content.js          AUTO-GENERATED (do not edit by hand)
+  SmoothScroll.jsx     Lenis instance (window.lenis)
+  SmartNavbar.jsx      navbar hide/show + active-section indicator
+  PromotionScroll.jsx  pinned #promotion section animation
 components/            Navbar, Preloader, Hero, Category, Promotion,
                        Services, Work, Team, Faq, Footer
-public/assets/         CSS, font, gambar, video, runtime GSAP/Webflow
-socmed/                aset promosi (video scroll, brand board, dll.)
+public/assets/         CSS, fonts, images, videos, GSAP/Webflow runtime
+socmed/                promo assets (scroll video, brand board, etc.)
 ```
 
-> 💡 **Kenapa HTML statis?** Runtime Webflow/GSAP memanipulasi DOM saat load (SplitText, inline style), yang bentrok dengan hydration React. Jadi komponen dirender ke HTML statis lewat `gen-static.mjs`, lalu disuntikkan via `dangerouslySetInnerHTML` agar animasi berjalan mulus tanpa error hydration.
+> 💡 **Why static HTML?** The Webflow/GSAP runtime rewrites the DOM on load (SplitText, inline styles), which conflicts with React hydration. So the components are rendered to static HTML by `gen-static.mjs` and injected via `dangerouslySetInnerHTML`, letting the animations run smoothly with no hydration errors.
 
-## 🎨 Kustomisasi
+## 🎨 Customization
 
-- **Warna & font** — atur CSS variable di `public/assets/monocrome.webflow.shared.8c6d9d2df.css`: `--core-palette--brand-blue: #012d80`, `--core-palette--mint: #5aecc1`, `--core-palette--soft-blue: #c5effd`, `--core-palette--pink: #f5c7e3`, `--neutral--black: #000`; font heading `--_font-family---primary-font` (Futura PT) dan body `--_font-family---body-font` (Inter Tight).
-- **Konten section** — edit teks, gambar, dan link langsung di `components/*.jsx` (misalnya `Hero.jsx`, `Work.jsx` untuk kolaborasi, `Faq.jsx`, `Footer.jsx`).
-- **Animasi promotion** — sesuaikan di `app/PromotionScroll.jsx`: `end: '+=150%'` (panjang scroll saat pin), `duration` tiap tween, dan warna tujuan `backgroundColor: '#012d80'`.
-- **Smooth scroll** — atur `duration: 2.5` dan `easing` di `app/SmoothScroll.jsx`.
-- **Kartu hero** — atur `HERO_DONE_MS` (kapan kartu mulai muncul) dan `STAGGER_MS` (jeda antar kartu) di `app/layout.jsx`.
-- **Aset foto, video & logo** — ganti file di `public/assets/ventela-assets/`.
+- **Colors & fonts**: edit the CSS variables in `public/assets/monocrome.webflow.shared.8c6d9d2df.css`: `--core-palette--brand-blue: #012d80`, `--core-palette--mint: #5aecc1`, `--core-palette--soft-blue: #c5effd`, `--core-palette--pink: #f5c7e3`, `--neutral--black: #000`; heading font `--_font-family---primary-font` (Futura PT) and body font `--_font-family---body-font` (Inter Tight).
+- **Section content**: edit text, images, and links directly in `components/*.jsx` (e.g. `Hero.jsx`, `Work.jsx` for collaborations, `Faq.jsx`, `Footer.jsx`).
+- **Promotion animation**: tweak `app/PromotionScroll.jsx`: `end: '+=150%'` (scroll length while pinned), each tween's `duration`, and the target color `backgroundColor: '#012d80'`.
+- **Smooth scroll**: adjust `duration: 2.5` and `easing` in `app/SmoothScroll.jsx`.
+- **Hero cards**: set `HERO_DONE_MS` (when the cards start appearing) and `STAGGER_MS` (delay between cards) in `app/layout.jsx`.
+- **Photos, videos & logo**: replace the files in `public/assets/ventela-assets/`.
 
-## ☕ Traktir Kopi
+## ☕ Buy Me a Coffee
 
-Kalau project ini bermanfaat dan kamu mau mendukung, boleh banget traktir kopi Rp10.000 😄
+If this project helped you and you'd like to support it, a Rp10,000 coffee would be awesome 😄
 
 👉 [lynk.id/fandy.codesign](https://lynk.id/fandy.codesign)
 
-Terima kasih banyak atas dukungannya! 🙏
+Thank you so much for your support! 🙏
 
-## 🌐 Ikuti / Connect
+## 🌐 Follow / Connect
 
-Yuk follow & ngobrol soal desain dan coding:
+Let's connect and chat about design and code:
 
 - 📸 **Instagram** — [@fandy.codesign](https://instagram.com/fandy.codesign)
 - 🎵 **TikTok** — [@fandy.codesign](https://tiktok.com/@fandy.codesign)
