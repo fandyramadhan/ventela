@@ -3,27 +3,73 @@ import SmoothScroll from "./SmoothScroll";
 import SmartNavbar from "./SmartNavbar";
 import PromotionScroll from "./PromotionScroll";
 
+const SITE_NAME = "Ventela";
+const TITLE = "Ventela — Premium Vulcanized Shoes, Made in Bandung";
 const DESCRIPTION =
-  "Monocrome is a bold and modern Webflow template for creative agencies. Built for branding, portfolios, and digital studios, it combines clean layouts, strong typography, and smooth interactions to showcase your work with impact.";
-const TITLE = "Monocrome - Webflow HTML website template";
+  "Ventela makes premium vulcanized sneakers in Bandung, Indonesia. A local product with a 100% quality guarantee: 12oz canvas uppers, ultralite foam insoles and neat stitching. Wear local, walk louder, pay smarter.";
+const OG_IMAGE = "/assets/ventela-assets/og-image.jpg";
+
+// Set NEXT_PUBLIC_SITE_URL to the deployed URL so OG/Twitter image URLs are absolute.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata = {
-  metadataBase: new URL("https://monocrome.webflow.io"),
+  metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: DESCRIPTION,
-  generator: "Webflow",
+  applicationName: SITE_NAME,
+  keywords: [
+    "Ventela",
+    "sepatu lokal",
+    "vulcanized shoes",
+    "sneakers Bandung",
+    "local product Indonesia",
+    "Ventela V-22",
+  ],
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
+    siteName: SITE_NAME,
     type: "website",
-    images: ["/assets/69f8b858d45a0527f627e536_Open_Graph.png"],
+    locale: "en_US",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Ventela — Premium Vulcanized Shoes" }],
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
 };
+
+export const viewport = {
+  themeColor: "#012d80",
+};
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: "/",
+  logo: "/assets/ventela-assets/logo-ventela.webp",
+  description: DESCRIPTION,
+  slogan: "Walk Louder",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Jl. Soekarno-Hatta No. 590",
+    addressLocality: "Bandung",
+    addressRegion: "Jawa Barat",
+    postalCode: "40286",
+    addressCountry: "ID",
+  },
+  email: "cs@ventela.co.id",
+  telephone: "+62-811-2000-590",
+  sameAs: [
+    "https://instagram.com/ventela.indonesia",
+    "https://tiktok.com/@ventela.indonesia",
+  ],
+};
+
+const FAVICON = "/assets/ventela-assets/favicon";
 
 // End-of-<body> runtime scripts, in the exact order of the source index.html.
 // They are rendered into the initial HTML (not loaded from a useEffect) so they
@@ -47,7 +93,6 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      data-wf-domain="monocrome.webflow.io"
       data-wf-page="69e9e66c20e59c8516b7fe05"
       data-wf-site="69e9e66b20e59c8516b7fe02"
       suppressHydrationWarning>
@@ -61,7 +106,7 @@ export default function RootLayout({ children }) {
 
         <link
           rel="stylesheet"
-          href="/assets/monocrome.webflow.shared.8c6d9d2df.css"
+          href="/assets/ventela.webflow.css"
           type="text/css"
         />
 
@@ -75,47 +120,15 @@ export default function RootLayout({ children }) {
         <script src="/assets/webfont.js" />
         <script dangerouslySetInnerHTML={{ __html: wf.webfontLoad }} />
 
-        <link
-          rel="icon"
-          href="/assets/69f6f1c6533f27ed6a0c4ebb_Favicon_Black.png"
-          type="image/png"
-          sizes="32x32"
-          media="(prefers-color-scheme: light)"
-        />
-        <link
-          rel="icon"
-          href="/assets/69f6f1f1da609da988276b1a_Favicon_32_whITE.png"
-          type="image/png"
-          sizes="32x32"
-          media="(prefers-color-scheme: dark)"
-        />
-        <link
-          rel="icon"
-          href="/assets/69f6f1c6ed718eea48959de2_Favicon_Black.png"
-          type="image/png"
-          sizes="48x48"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/assets/69f6f1fc5f43c471fcfbf17c_Favicon_Black.png"
-          sizes="180x180"
-        />
-        <link
-          rel="icon"
-          href="/assets/69f6f1fca68c4720f34b648e_Favicon_Black.png"
-          type="image/png"
-          sizes="192x192"
-        />
-        <link
-          rel="icon"
-          href="/assets/69f6f1fc9c2ace5d235cb14c_Favicon_Black.png"
-          type="image/png"
-          sizes="512x512"
-        />
+        <link rel="icon" href={`${FAVICON}/favicon-32.png`} type="image/png" sizes="32x32" />
+        <link rel="icon" href={`${FAVICON}/favicon-48.png`} type="image/png" sizes="48x48" />
+        <link rel="icon" href={`${FAVICON}/favicon-192.png`} type="image/png" sizes="192x192" />
+        <link rel="icon" href={`${FAVICON}/favicon-512.png`} type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href={`${FAVICON}/apple-touch-icon.png`} sizes="180x180" />
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(wf.jsonld) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD) }}
         />
 
         <link rel="stylesheet" href="/assets/fonts.css" type="text/css" />

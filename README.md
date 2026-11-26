@@ -73,7 +73,7 @@ socmed/                promo assets (scroll video, brand board, etc.)
 
 ## 🎨 Customization
 
-- **Colors & fonts**: edit the CSS variables in `public/assets/monocrome.webflow.shared.8c6d9d2df.css`: `--core-palette--brand-blue: #012d80`, `--core-palette--mint: #5aecc1`, `--core-palette--soft-blue: #c5effd`, `--core-palette--pink: #f5c7e3`, `--neutral--black: #000`; heading font `--_font-family---primary-font` (Futura PT) and body font `--_font-family---body-font` (Inter Tight).
+- **Colors & fonts**: edit the CSS variables in `public/assets/ventela.webflow.css`: `--core-palette--brand-blue: #012d80`, `--core-palette--mint: #5aecc1`, `--core-palette--soft-blue: #c5effd`, `--core-palette--pink: #f5c7e3`, `--neutral--black: #000`; heading font `--_font-family---primary-font` (Futura PT) and body font `--_font-family---body-font` (Inter Tight).
 - **Section content**: edit text, images, and links directly in `components/*.jsx` (e.g. `Hero.jsx`, `Work.jsx` for collaborations, `Faq.jsx`, `Footer.jsx`).
 - **Promotion animation**: tweak `app/PromotionScroll.jsx`: `end: '+=150%'` (scroll length while pinned), each tween's `duration`, and the target color `backgroundColor: '#012d80'`.
 - **Smooth scroll**: adjust `duration: 2.5` and `easing` in `app/SmoothScroll.jsx`.
