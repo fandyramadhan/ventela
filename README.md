@@ -94,3 +94,4 @@ Yuk follow & ngobrol soal desain dan coding:
 
 - 📸 **Instagram** — [@fandy.codesign](https://instagram.com/fandy.codesign)
 - 🎵 **TikTok** — [@fandy.codesign](https://tiktok.com/@fandy.codesign)
+- 🧵 **Threads** — [@fandy.codesign](https://www.threads.net/@fandy.codesign)
